@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Upwork Jobs Filter",
+  "version": "0.1.0",
+  "description": "在Upwork搜索页面注入工具栏，采集工作并过滤Payment verified。",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://www.upwork.com/*",
+    "https://upwork.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.upwork.com/nx/search/jobs*",
+        "https://upwork.com/nx/search/jobs*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
